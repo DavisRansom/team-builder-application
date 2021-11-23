@@ -131,7 +131,7 @@ function addIntern() {
 function buildTeam() {
     const filepath = "./dist/team.html";
     const html = generateHTML(team);
-    fs.writeFileSync(filepath.html);
+    fs.writeFileSync(filepath,html);
     console.log("Team.html is in the dist folder. Thank you for using the app!");
     process.exit();
     //console.log(team);

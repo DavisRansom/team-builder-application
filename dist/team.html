@@ -1,6 +1,4 @@
-//this is where I will put the data from the user's responses to the questions onto the HTML page
-function generateHTML(team){
-    var html = `
+
     <!DOCTYPE html>
     <html lang="en">
       <head>
@@ -29,7 +27,7 @@ function generateHTML(team){
                 margin: 5px;
                 padding: 10px;
                 border-radius: 10px;
-                width: 250px;
+                width: 175px;
             }
             .Manager{
                 background-color: lightskyblue;
@@ -48,28 +46,23 @@ function generateHTML(team){
         <h1>Tech Team</h1>
       </header>
 
-      `;
-    
-    for (let emp of team){
-        let role = emp.getRole();
-        html+=`
-            <section class="${role}">
-                <h3>${role}</h3>
-                <h2>${emp.getName()}</h2>
-                <p>ID: ${emp.getId()}</p>
-                <p>Email: ${emp.getEmail()}</p>
-        `;
-        if(role==="Manager")html+=`<p>Office Number: ${emp.getOfficeNumber()}</p>`;
-        else if(role==="Engineer")html+=`<p>Github: ${emp.getGithub()}</p>`;
-        else if(role==="Intern")html+=`<p>School: ${emp.getSchool()}</p>`;
-
-        html+="</section>";
-    }
-
-    html+=`</body>
-    </html>`;
-    return html;
-}
-
-
-module.exports = generateHTML;
+      
+            <section class="Manager">
+                <h3>Manager</h3>
+                <h2>Ian</h2>
+                <p>ID: 1</p>
+                <p>Email: ian@gmail.com</p>
+        <p>Office Number: 12</p></section>
+            <section class="Engineer">
+                <h3>Engineer</h3>
+                <h2>Davis</h2>
+                <p>ID: 2</p>
+                <p>Email: davis@gmail.com</p>
+        <p>Github: DavisRansomGit</p></section>
+            <section class="Intern">
+                <h3>Intern</h3>
+                <h2>Joey</h2>
+                <p>ID: 3</p>
+                <p>Email: joey@gmail.com</p>
+        <p>School: CSUSM</p></section></body>
+    </html>
