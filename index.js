@@ -3,6 +3,8 @@ const Engineer = require("./lib/Engineer");
 const Intern = require("./lib/Intern");
 const Manager = require("./lib/Manager");
 const team = [];
+const generateHTML = require("./utils/generateHTML");
+const fs = require("fs");
 
 function addToTeam() {
     inquirer.prompt([
@@ -13,14 +15,14 @@ function addToTeam() {
             choices: ["Manager", "Engineer", "Intern", "No more team members to add - finish building my team."]
         }
     ])
-    .then(res=>{
-        switch(res.typeOfTeamMember){
-            case "Manager": return addManager();
-            case "Engineer": return addEngineer();
-            case "Intern": return addIntern();
-            default: buildTeam();
-        }
-    })
+        .then(res => {
+            switch (res.typeOfTeamMember) {
+                case "Manager": return addManager();
+                case "Engineer": return addEngineer();
+                case "Intern": return addIntern();
+                default: buildTeam();
+            }
+        })
 
 
 }
@@ -49,12 +51,12 @@ function addManager() {
         },
         //after asking this ?, the user should return to addToTeam question
     ])
-    .then(res=>{
-        const manager = new Manager(res.id, res.name, res.email, res.officeNumber);
-        team.push(manager);
-        console.log("Manager created");
-        addToTeam();
-    })
+        .then(res => {
+            const manager = new Manager(res.id, res.name, res.email, res.officeNumber);
+            team.push(manager);
+            console.log("Manager created");
+            addToTeam();
+        })
 
 
 
@@ -79,45 +81,45 @@ function addEngineer() {
             message: "What is the email address of the engineer you are adding to this project?"
         },
         {
-                name: "text",
-                name: "github",
-                message: "What is the Github username of the engineer you are adding to this project?"
-            },
-        ])
-        .then(res=>{
+            name: "text",
+            name: "github",
+            message: "What is the Github username of the engineer you are adding to this project?"
+        },
+    ])
+        .then(res => {
             const engineer = new Engineer(res.id, res.name, res.email, res.github);
             team.push(engineer);
             console.log("Engineer created");
             addToTeam();
         });
 
-    }
+}
 
-    
-    function addIntern() {
-            inquirer.prompt([
-                {
-                    type: "text",
-                    name: "name",
-                    message: "What is the name of the intern you would like to add?"
-                },
-                {
-                    type: "text",
-                    name: "id",
-                    message: "What is the Intern's Employee ID Number?"
-                },
-                {
-                    type: "text",
-                    name: "email",
-                    message: "What is the email address of the intern are adding to this project?"
-                },
-                {
-                    name: "text",
-                    name: "school",
-                    message: "What is the school of the intern you are adding to this project?"
-                },
-        ])
-        .then(res=>{
+
+function addIntern() {
+    inquirer.prompt([
+        {
+            type: "text",
+            name: "name",
+            message: "What is the name of the intern you would like to add?"
+        },
+        {
+            type: "text",
+            name: "id",
+            message: "What is the intern's Employee ID Number?"
+        },
+        {
+            type: "text",
+            name: "email",
+            message: "What is the email address of the intern that you are adding to this project?"
+        },
+        {
+            name: "text",
+            name: "school",
+            message: "What is the school of the intern that you are adding to this project?"
+        },
+    ])
+        .then(res => {
             const intern = new Intern(res.id, res.name, res.email, res.school);
             team.push(intern);
             console.log("Intern created");
@@ -127,7 +129,12 @@ function addEngineer() {
 }
 
 function buildTeam() {
-    console.log(team);
+    const filepath = "./dist/team.html";
+    const html = generateHTML(team);
+    fs.writeFileSync(filepath.html);
+    console.log("Team.html is in the dist folder. Thank you for using the app!");
+    process.exit();
+    //console.log(team);
     //add the manager's info (name, email, store number)
     //add the engineer(s) info (name, email, Github )
     //add the intern(s) info
