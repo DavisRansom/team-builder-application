@@ -57,7 +57,7 @@ function generateHTML(team){
                 <h3>${role}</h3>
                 <h2>${emp.getName()}</h2>
                 <p>ID: ${emp.getId()}</p>
-                <p>Email: ${emp.getEmail()}</p>
+                <p><Email: ${emp.getEmail()}</p>
         `;
         if(role==="Manager")html+=`<p>Office Number: ${emp.getOfficeNumber()}</p>`;
         else if(role==="Engineer")html+=`<p>Github: ${emp.getGithub()}</p>`;
