@@ -7,7 +7,7 @@
 
 ## Getting Started
 
-*To get started simply type in npm install to add the necessary Node.js libraries to the project and type node index.js into the command line. Then, a series of questions will prompt the user and he/she can build the team.
+*To get started simply type in npm install to add the necessary Node.js libraries to the project and then type node index.js into the command line. Then, a series of questions will prompt the user and he/she can build their Tech Team.
 
 ### Dependencies
 * Node.js is required to run this program
