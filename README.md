@@ -1,5 +1,4 @@
 # team-builder-app
-
 *This application allows users to input, view, and retrieve information about their Tech Team.
 
 ## Description
@@ -18,8 +17,12 @@
 
 * There is no need to install this program, but you can find all of the necessary files at [https://github.com/DavisRansom/team-builder-application]
 
-### Executing program
-* Step-by-step bullets
+### Executing the Program
+* Run node index in the command line
+* Answer the questions to build your team
+* When you have no additional team members to add select the last choice, "I have no more team members to add - build my team"
+* Then go to the dist folder and find the updated HTML file (team.html) with all of the information present on it 
+* Run the team.html file in your browser to see the information represented on screen
 
 ## Help
 
