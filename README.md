@@ -16,33 +16,24 @@
 
 ### Installing
 
-* How/where to download your program
+* There is no need to install this program, but you can find all of the necessary files at [https://github.com/DavisRansom/team-builder-application]
 
 ### Executing program
-
-* How to run the program
 * Step-by-step bullets
-```
-code blocks for commands
-```
 
 ## Help
 
-Any advise for common problems or issues.
-```
-command to run if program contains helper info
-```
+*For help contact [@davis.ransom.tech@gmail.com]
 
-## Authors
+## Author
 
 Davis Ransom  
-[@davis.ransom.tech@gmail.com]
-[https://github.com/DavisRansom]
+*[@davis.ransom.tech@gmail.com]
+*[https://github.com/DavisRansom]
 
 ## Version History
 
-* 0.1
-    * Initial Release
+* 0.1 Initial Release - This is the current version of the application
 
 ## License
 
